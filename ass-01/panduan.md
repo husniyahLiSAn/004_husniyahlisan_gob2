@@ -16,4 +16,4 @@ Assignment   : Menampilkan person data
    go run main.go
    ```
 4. Jika berhasil maka output-nya adalah sebagai berikut:
-![Gambar teks editor VS Code](D://../ss_1.png)
+![Gambar teks editor VS Code](https://github.com/husniyahLiSAn/004_husniyahlisan_gob2/blob/main/ass-01/ss_1.png)
