@@ -1,11 +1,11 @@
 package main
 
-import "./belajar-go/helpers"
+import "belajar-go/helpers"
 
 func main() {
 	helpers.Greet()
 
 	var person = helpers.Person{}
 
-	person.InvokeGreet()
+	person.Invokegreet()
 }
