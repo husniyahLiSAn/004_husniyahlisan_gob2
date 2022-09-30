@@ -1,2 +1,7 @@
 # Summary
-1. --
+1. _Channel_ pada Golang merupakan sebuah mekanisme untuk Goroutine saling berkomunikasi dengan goroutine lainnya. Komunikasi yang dimaksud adalah proses pengiriman dan pertukaran data. Untuk membuatnya diperlukan function __make__ lalu keyword __chan__ untuk membuat _channel_
+2. _Defer_ merupakan sebuah keyword pada Golang yang digunakan untuk memanggil sebuah function yang dimana proses eksekusi akan di tahan hingga block sebuah function selesai.
+3. Funcion _Exit_ yang yang berasal dari package os berguna untuk menghentikan suatu program secara paksa.
+4. _Error_ merupakan sebuah tipe data pada bahasa Go yang digunakan untuk me-return sebuah error jika ada error yang terjadi. Umumya, nilai error akan di-return pada pada posisi terakhir dari nilai-nilai return sebuah function.
+5. _Panic_ digunakan untuk menampilkan stack trace error sekaligus menghentikan flow goroutine(karena main() juga merupakan goroutine, maka behaviour yang sama juga berlaku). Setelah ada _panic_, proses akan terhenti, apapun setelah tidak di-eksekusi kecuali proses yang sudah di-defer sebelumnya (akan muncul sebelum panic error). Panic menampilkan pesan error di console, sama seperti fmt.Println().
+6. Function _Recover_ digunakan untuk menangkap error yang terjadi pada sebuah Goroutine. Untuk menggunakannya perlu memanggil function __catchErr__ dengan keyword __defer__.
