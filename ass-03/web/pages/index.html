@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Weather Status</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Weather Status</h1>
+						<div class="col" style="text-align: center;">
+							<div class="colTitle card">
+								<h2>Water</h2>
+								<h2 id="water">??</h2>
+								<h6>meter</h6>
+								<h2 id="msgWater"></h2>
+							</div>
+							<div class="colTitle card">
+								<h2>Wind</h2>
+								<h2 id="wind">??</h2>
+								<h6>m/s</h6>
+								<h2 id="msgWind"></h2>
+							</div>
+						</div>
+						<nav>
+							<span><a href="about.html" id="button"
+									style="color:darkblue;background-color:steelblue;padding: 10px;border-radius: 15px;">
+									About Me</a></span>
+						</nav>
+					</header>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<span class="copyright">&copy; Copyright. 2022 | <a href="about.html">Husniyah Lisan</a></span>
+					</footer>
+
+			</div>
+		</div>
+		<script>
+			window.onload = function() { document.body.classList.remove('is-preload'); }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+			const api_url = "http://localhost:8082/weather/"
+  
+			const get_data = async (a) => { 
+				const request = await fetch('http://localhost:8082/weather/update', {
+					method: 'POST',
+				});
+
+				const response = await fetch(a)
+				var data = await response.json()
+				var water = data["status"]["water"]
+				var wind = data["status"]["Wind"]
+				var msgWater = data["waterMessage"]
+				var msgWind = data["windMessage"]
+				
+				document.getElementById("water").innerHTML = water;
+				document.getElementById("wind").innerHTML = wind; 
+				document.getElementById("msgWater").innerHTML = msgWater;
+				document.getElementById("msgWind").innerHTML = msgWind;
+				setTimeout(() => get_data(a), 1000*15)
+			}
+			get_data(api_url);
+		</script>
+	</body>
+</html>

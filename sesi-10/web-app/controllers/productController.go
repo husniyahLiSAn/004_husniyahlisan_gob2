@@ -39,6 +39,7 @@ func CreateProduct(c *gin.Context) {
 
 	c.JSON(http.StatusCreated, Product)
 }
+
 func UpdateProduct(c *gin.Context) {
 	db := database.GetDB()
 	userData := c.MustGet("userData").(jwt.MapClaims)

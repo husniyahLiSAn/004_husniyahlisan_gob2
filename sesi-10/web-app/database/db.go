@@ -11,10 +11,10 @@ import (
 
 var (
 	host     = "localhost"
-	user     = "puspakirana"
-	password = "MyPostgre@123"
+	user     = "postgres"
+	password = "postgres"
 	dbPort   = "5432"
-	dbName   = "db_go_rest"
+	dbName   = "learning-gorm"
 	db       *gorm.DB
 	err      error
 )
